@@ -2,6 +2,6 @@
     <article class="comment">
         <div class="author">{{comment.user.name}} {{comment.user.surname}}</div>
         <div class="date">{{comment.added}}</div>
-<div class="commentContent">{{comment.contentPlainText}}</div>
+        <div class="commentContent">{{comment.contentPlainText}}</div>
     </article>
 </:foreach>
