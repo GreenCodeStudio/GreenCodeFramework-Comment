@@ -10,4 +10,15 @@ class Comment{
     {
         return (new CommentRepository())->getToShow($objectType, $objectId);
     }
+
+    public function insert($objectType, $objectId, $getUserId, $data)
+    {
+        return (new CommentRepository())->insert([
+            'object_type' => $objectType,
+            'object_id' => $objectId,
+            'user_id' => $getUserId,
+            'contentPlainText' => $data->contentPlainText,
+            'added' => date('Y-m-d H:i:s')
+        ]);
+    }
 }

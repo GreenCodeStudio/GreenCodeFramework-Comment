@@ -5,3 +5,9 @@
         <div class="commentContent">{{comment.contentPlainText}}</div>
     </article>
 </:foreach>
+<form>
+    <label>
+        <textarea name="contentPlainText"></textarea>
+    </label>
+    <button class="button action-add"><span class="icon-save"></span>{{t("CommonBase.save")}}</button>
+</form>

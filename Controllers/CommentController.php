@@ -12,4 +12,9 @@ class CommentController extends PageStandardController
         $items = (new Comment())->getToShow($objectType, $objectId);
         $this->addView('Comment', 'CommentsShow', ['data' => ['items' => $items]]);
     }
+
+    public function show_data($objectType, $objectId)
+    {
+        return ['objectType' => $objectType, 'objectId' => $objectId];
+    }
 }
