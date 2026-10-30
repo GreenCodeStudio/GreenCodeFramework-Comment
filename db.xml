@@ -38,6 +38,12 @@
             <type>int</type>
             <null>yes</null>
         </column>
+
+        <column>
+            <name>files</name>
+            <type>json</type>
+            <null>yes</null>
+        </column>
         <index>
             <type>PRIMARY</type>
             <element>id</element>

@@ -10,6 +10,7 @@ export class show{
         let form = new FormManager(page.querySelector('form'));
 
         form.submit = async newData => {
+            newData.files = page.querySelector('[name="files"]').value;
             await Ajax.Comment.insert(this.data.objectType, this.data.objectId, newData);
             pageManager.goto('/Comment/show/' + this.data.objectType + '/' + this.data.objectId);
         }

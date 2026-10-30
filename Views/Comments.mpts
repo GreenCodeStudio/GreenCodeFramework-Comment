@@ -3,11 +3,21 @@
         <div class="author">{{comment.user.name}} {{comment.user.surname}}</div>
         <div class="date">{{comment.added}}</div>
         <div class="commentContent">{{comment.contentPlainText}}</div>
+        <:if condition=comment.files >
+            <ul class="files">
+                <:foreach collection=comment.files item=file>
+                    <li><a href="/File/get/":file.id class="nativeLink">{{file.name}}</a></li>
+                </:foreach>
+            </ul>
+        </:if>
     </article>
 </:foreach>
 <form>
     <label>
         <textarea name="contentPlainText"></textarea>
+    </label>
+    <label>
+        <file-uploader name="files" />
     </label>
     <button class="button action-add"><span class="icon-save"></span>{{t("CommonBase.save")}}</button>
 </form>

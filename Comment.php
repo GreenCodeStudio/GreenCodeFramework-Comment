@@ -4,7 +4,8 @@ namespace Comment;
 
 use Comment\Repository\CommentRepository;
 
-class Comment{
+class Comment
+{
 
     public function getToShow($objectType, $objectId)
     {
@@ -18,6 +19,7 @@ class Comment{
             'object_id' => $objectId,
             'user_id' => $getUserId,
             'contentPlainText' => $data->contentPlainText,
+            'files' => empty($data->files) ? null : json_encode($data->files),
             'added' => date('Y-m-d H:i:s')
         ]);
     }
